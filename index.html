@@ -968,13 +968,19 @@ ul{list-style:none}
             <input type="tel" id="whats" name="whats" placeholder="(11) 99999-9999" required>
           </div>
           <div class="field">
-            <label for="area">Qual o tamanho do seu apartamento?</label>
+            <label for="area">Qual ambiente deseja planejar?</label>
             <select id="area" name="area" required>
               <option value="">Selecione uma opção</option>
-              <option value="Até 30m²">Até 30m²</option>
-              <option value="Até 50m²">Até 50m²</option>
-              <option value="Até 60m²">Até 60m²</option>
-              <option value="Ainda não sei">Ainda não sei</option>
+              <option value="Cozinha">Cozinha</option>
+              <option value="Sala de Estar">Sala de Estar</option>
+              <option value="Quarto">Quarto</option>
+              <option value="Suíte Master">Suíte Master</option>
+              <option value="Banheiro">Banheiro</option>
+              <option value="Home Office">Home Office</option>
+              <option value="Área de Serviço">Área de Serviço</option>
+              <option value="Varanda">Varanda</option>
+              <option value="Closet">Closet</option>
+              <option value="Casa Completa">Casa Completa</option>
             </select>
           </div>
           <button type="submit" class="cta">Quero meu projeto gratuito</button>
@@ -1232,7 +1238,7 @@ ul{list-style:none}
     const whats = document.getElementById('whats').value.trim();
     const area = document.getElementById('area').value;
 
-    const msg = `Olá, meu nome é ${nome} e vim pelo site para fazer um orçamento agora! Apartamento: *${area}*. Meu WhatsApp: ${whats}.`;
+    const msg = `Olá, meu nome é ${nome} e vim pelo site para fazer um orçamento agora! Ambiente: *${area}*. Meu WhatsApp: ${whats}.`;
     const url = `https://api.whatsapp.com/send?phone=5511946313844&text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank', 'noopener');
   });
