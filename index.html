@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M72PV459');</script>
+<!-- End Google Tag Manager -->
 <meta name="theme-color" content="#0D3D3D">
 <title>Móveis Planejados em Cotia | Mobile D'arte By Italínea</title>
 <meta name="description" content="Móveis planejados para casa completa em Cotia e Grande SP. Parcelamento próprio em 36x no boleto. 1ª parcela em 90 dias. Aprovação na hora. Orçamento grátis!">
@@ -551,6 +558,10 @@ ul{list-style:none}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M72PV459"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ============================================================
      BARRA DE URGÊNCIA
@@ -1238,9 +1249,34 @@ ul{list-style:none}
     const whats = document.getElementById('whats').value.trim();
     const area = document.getElementById('area').value;
 
+    // Conversão: envio de formulário (lead)
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'lead_form_submit',
+      lead_name: nome,
+      lead_whatsapp: whats,
+      lead_ambiente: area,
+      form_location: 'landing_page_principal'
+    });
+
     const msg = `Olá, meu nome é ${nome} e vim pelo site para fazer um orçamento agora! Ambiente: *${area}*. Meu WhatsApp: ${whats}.`;
     const url = `https://api.whatsapp.com/send?phone=5511946313844&text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank', 'noopener');
+  });
+
+  // ----------------------------------------------------------
+  // TRACKING DE CLIQUES EM WHATSAPP (todos os botões/links)
+  // ----------------------------------------------------------
+  document.querySelectorAll('a[href*="api.whatsapp.com"], a[href*="wa.me"]').forEach(link => {
+    link.addEventListener('click', () => {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'whatsapp_click',
+        click_url: link.href,
+        click_text: link.innerText.trim().slice(0, 80),
+        click_location: link.closest('section')?.id || link.closest('section')?.className || 'header_or_footer'
+      });
+    });
   });
 
   // ----------------------------------------------------------
