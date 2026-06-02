@@ -1280,37 +1280,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // ----------------------------------------------------------
   document.getElementById('leadForm').addEventListener('submit', (e) => {
     e.preventDefault();
+
+    // Limpa valores que contêm macros não resolvidos do Meta/Google ({{...}})
+    const cleanUTM = (v) => {
+      if(!v) return '';
+      if(v.indexOf('{{') !== -1 || v.indexOf('}}') !== -1) return '';
+      return v;
+    };
+
     const nome = document.getElementById('nome').value.trim();
     const whats = document.getElementById('whats').value.trim();
     const area = document.getElementById('area').value;
     const plan = document.getElementById('lead_plan').value;
 
-    const utmSource = getUTM('utm_source') || 'direto';
-    const utmMedium = getUTM('utm_medium') || 'organico';
-    const utmCampaign = getUTM('utm_campaign') || '-';
-    const utmContent = getUTM('utm_content') || '-';
-    const utmTerm = getUTM('utm_term') || '-';
+    const utmSource = cleanUTM(getUTM('utm_source'));
+    const utmMedium = cleanUTM(getUTM('utm_medium'));
+    const utmCampaign = cleanUTM(getUTM('utm_campaign'));
+    const utmContent = cleanUTM(getUTM('utm_content'));
+    const utmTerm = cleanUTM(getUTM('utm_term'));
 
-    // Mapeia utm_source para nome amigável da plataforma
-    const PLATFORM_MAP = {
-      'meta':      'Meta',
-      'facebook':  'Meta (Facebook)',
-      'fb':        'Meta (Facebook)',
-      'instagram': 'Meta (Instagram)',
-      'ig':        'Meta (Instagram)',
-      'whatsapp':  'Meta (WhatsApp)',
-      'google':    'Google Ads',
-      'googleads': 'Google Ads',
-      'gads':      'Google Ads',
-      'tiktok':    'TikTok',
-      'linkedin':  'LinkedIn',
-      'youtube':   'YouTube',
-      'direto':    'Direto / Orgânico'
+    // Mapeia utm_source para frase amigável na mensagem do lead
+    // (nomes que o leigo reconhece, não jargão de marketing)
+    const PLATFORM_FRIENDLY = {
+      'meta':      'no Instagram',
+      'facebook':  'no Facebook',
+      'fb':        'no Facebook',
+      'instagram': 'no Instagram',
+      'ig':        'no Instagram',
+      'whatsapp':  'no WhatsApp',
+      'google':    'no Google',
+      'googleads': 'no Google',
+      'gads':      'no Google',
+      'tiktok':    'no TikTok',
+      'linkedin':  'no LinkedIn',
+      'youtube':   'no YouTube'
     };
-    const platform = PLATFORM_MAP[utmSource.toLowerCase()]
-      || utmSource.charAt(0).toUpperCase() + utmSource.slice(1);
+    const platformFriendly = PLATFORM_FRIENDLY[utmSource.toLowerCase()] || '';
 
-    // Conversão para o GTM/GA (com UTMs)
+    // GTM/GA — UTMs completas pra tracking interno (não vão pra mensagem do WhatsApp)
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'lead_form_submit',
@@ -1318,7 +1325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       lead_whatsapp: whats,
       lead_ambiente: area,
       lead_plan: plan,
-      lead_platform: platform,
+      lead_platform: platformFriendly || 'Direto',
       lead_utm_source: utmSource,
       lead_utm_medium: utmMedium,
       lead_utm_campaign: utmCampaign,
@@ -1327,17 +1334,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       form_location: 'landing_page_principal'
     });
 
-    // Monta a mensagem do WhatsApp com os dados do lead + origem
-    let msg = `Olá, meu nome é ${nome} e vim pelo site para fazer um orçamento!\n`;
+    // Mensagem do WhatsApp — tom natural, sem expor que é lead rastreado
+    let opening;
+    if(platformFriendly){
+      opening = `Olá! Vi um anúncio da Mobile D'arte ${platformFriendly} e quero solicitar um orçamento.`;
+    } else {
+      opening = `Olá! Vi o site da Mobile D'arte e quero solicitar um orçamento.`;
+    }
+
+    let msg = opening + '\n\n';
     msg += `📐 Ambiente: *${area}*\n`;
-    if(plan) msg += `📦 Plano de interesse: *${plan}*\n`;
-    msg += `📱 WhatsApp: ${whats}\n`;
-    msg += `\n―――――――――――\n`;
-    msg += `📊 Origem do lead\n`;
-    msg += `Plataforma: *${platform}*\n`;
-    msg += `Campanha: ${utmCampaign}\n`;
-    msg += `Anúncio: ${utmContent}\n`;
-    if(utmTerm && utmTerm !== '-') msg += `Termo: ${utmTerm}\n`;
+    msg += `📱 ${whats}\n`;
+    msg += `👤 ${nome}`;
 
     const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank', 'noopener');
