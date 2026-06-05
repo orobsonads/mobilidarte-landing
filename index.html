@@ -20,11 +20,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/og-cover.jpg">
 <meta property="og:locale" content="pt_BR">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
-
 <style>
 /* ============================================================
    RESET + BASE
@@ -41,7 +39,6 @@ img{max-width:100%;display:block;height:auto}
 button{font:inherit;cursor:pointer;border:0;background:none}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
-
 :root{
   --teal:#0D3D3D;
   --teal-darker:#0A3535;
@@ -54,11 +51,11 @@ ul{list-style:none}
   --red-soft:#FFF5F5;
   --green-soft:#F0FAF7;
   --red:#C44848;
+  --wa-green:#25D366;
   --container:1200px;
   --radius:6px;
   --transition:0.3s ease;
 }
-
 .container{max-width:var(--container);margin:0 auto;padding:0 24px}
 .serif{font-family:'Playfair Display',Georgia,serif;font-weight:700}
 .tag{
@@ -66,7 +63,6 @@ ul{list-style:none}
   text-transform:uppercase;color:var(--gold-deep);font-weight:600;
   margin-bottom:18px;
 }
-
 /* ============================================================
    BARRA DE URGÊNCIA
    ============================================================ */
@@ -84,7 +80,6 @@ ul{list-style:none}
     100%{transform:translateX(-100%)}
   }
 }
-
 /* ============================================================
    HEADER
    ============================================================ */
@@ -127,7 +122,6 @@ ul{list-style:none}
   .btn-wa{padding:10px 12px}
   .btn-wa svg{width:20px;height:20px}
 }
-
 /* ============================================================
    HERO
    ============================================================ */
@@ -162,6 +156,7 @@ ul{list-style:none}
 .cta:hover{background:var(--gold-deep);transform:translateY(-1px)}
 .cta-arrow{transition:transform var(--transition)}
 .cta:hover .cta-arrow{transform:translateX(4px)}
+.cta svg{width:20px;height:20px;flex-shrink:0}
 .trust{display:flex;gap:18px;margin-top:22px;flex-wrap:wrap;align-items:center}
 .trust-item{
   font-size:13px;color:var(--sub);display:flex;align-items:center;gap:6px;
@@ -174,7 +169,6 @@ ul{list-style:none}
   aspect-ratio:4/5;background:#F0EAE0;
 }
 .hero-img-wrap img{width:100%;height:100%;object-fit:cover}
-
 @media(max-width:900px){
   .hero{padding:36px 0 56px}
   .hero-grid{grid-template-columns:1fr;gap:32px}
@@ -184,7 +178,6 @@ ul{list-style:none}
   .pay-num{font-size:64px}
   .pay-box{max-width:100%}
 }
-
 /* ============================================================
    FAIXA DE CREDIBILIDADE
    ============================================================ */
@@ -207,7 +200,6 @@ ul{list-style:none}
   .credit-item:nth-child(2)::after{display:none}
   .credit-num{font-size:42px}
 }
-
 /* ============================================================
    ANCORAGEM EMOCIONAL
    ============================================================ */
@@ -227,7 +219,6 @@ ul{list-style:none}
   .anchor h2{font-size:30px}
   .anchor p{font-size:16px}
 }
-
 /* ============================================================
    ANTES/DEPOIS
    ============================================================ */
@@ -266,7 +257,6 @@ ul{list-style:none}
   .compare-grid{grid-template-columns:1fr;gap:16px}
   .compare-col{padding:24px}
 }
-
 /* ============================================================
    PLANOS
    ============================================================ */
@@ -319,7 +309,6 @@ ul{list-style:none}
   .plans-grid{grid-template-columns:1fr;max-width:420px}
   .plan.featured{transform:none}
 }
-
 /* ============================================================
    GALERIA
    ============================================================ */
@@ -359,7 +348,6 @@ ul{list-style:none}
   .gallery-item{aspect-ratio:1/1}
   .gallery-item-2{grid-row:span 1;grid-column:span 2;aspect-ratio:16/10}
 }
-
 /* ============================================================
    PROCESSO
    ============================================================ */
@@ -389,7 +377,6 @@ ul{list-style:none}
   .step-num{margin:0;width:56px;height:56px;font-size:22px}
   .step h3{margin-top:10px}
 }
-
 /* ============================================================
    DEPOIMENTOS
    ============================================================ */
@@ -423,9 +410,8 @@ ul{list-style:none}
   .testi-grid{grid-template-columns:1fr;max-width:420px}
   .map-embed iframe{height:300px}
 }
-
 /* ============================================================
-   CTA FINAL + FORM
+   CTA FINAL (agora 100% WhatsApp, sem formulário)
    ============================================================ */
 .cta-final{background:var(--teal);color:#fff;padding:96px 0;scroll-margin-top:80px}
 .cta-grid{
@@ -442,32 +428,32 @@ ul{list-style:none}
   display:flex;gap:14px;align-items:center;font-size:15px;color:#D9E5E5;
 }
 .cta-bullet-icon{font-size:22px;width:36px;text-align:center}
-.form-card{
+.wa-card{
   background:rgba(255,255,255,0.98);color:var(--ink);
-  border-radius:12px;padding:36px;
+  border-radius:12px;padding:40px 36px;text-align:center;
 }
-.form-card h3{
-  font-family:'Playfair Display',serif;font-size:22px;color:var(--teal);
-  margin-bottom:6px;font-weight:600;
+.wa-card h3{
+  font-family:'Playfair Display',serif;font-size:24px;color:var(--teal);
+  margin-bottom:10px;font-weight:700;
 }
-.form-card .form-sub{font-size:14px;color:var(--sub);margin-bottom:22px}
-.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
-.field label{font-size:13px;font-weight:600;color:var(--ink)}
-.field input,.field select{
-  padding:13px 14px;border:1px solid #D4D4D4;border-radius:6px;
-  font:inherit;font-size:15px;color:var(--ink);background:#fff;
-  transition:border-color var(--transition);
+.wa-card .wa-card-sub{font-size:15px;color:var(--sub);margin-bottom:28px;line-height:1.6}
+.btn-wa-big{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  width:100%;background:var(--wa-green);color:#fff;font-weight:700;font-size:17px;
+  padding:0 24px;height:60px;border-radius:8px;
+  box-shadow:0 12px 30px -10px rgba(37,211,102,0.6);
+  transition:transform 0.15s ease,box-shadow var(--transition);
 }
-.field input:focus,.field select:focus{outline:0;border-color:var(--teal)}
-.form-card .cta{width:100%;font-size:15px}
-.form-disclaimer{font-size:12px;color:var(--sub);text-align:center;margin-top:14px}
+.btn-wa-big:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(37,211,102,0.7)}
+.btn-wa-big svg{width:26px;height:26px;fill:#fff;flex-shrink:0}
+.wa-card-foot{font-size:13px;color:var(--sub);margin-top:18px}
+.wa-card-foot strong{color:var(--teal)}
 @media(max-width:900px){
   .cta-final{padding:64px 0}
   .cta-grid{grid-template-columns:1fr;gap:40px}
   .cta-text h2{font-size:30px}
-  .form-card{padding:28px}
+  .wa-card{padding:32px 24px}
 }
-
 /* ============================================================
    FAQ
    ============================================================ */
@@ -497,7 +483,6 @@ ul{list-style:none}
   .faq{padding:64px 0}
   .faq-q{font-size:16px;padding:18px 0}
 }
-
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -526,18 +511,16 @@ ul{list-style:none}
   border-top:1px solid rgba(201,169,110,0.2);padding:22px 0;
   font-size:13px;color:#A8BABA;text-align:center;
 }
-
 @media(max-width:900px){
   .footer{padding:48px 0 0}
   .footer-grid{grid-template-columns:1fr;gap:32px;padding-bottom:32px}
 }
-
 /* ============================================================
-   WHATSAPP FLUTUANTE (agora rola até o formulário)
+   WHATSAPP FLUTUANTE
    ============================================================ */
 .wa-float{
   position:fixed;bottom:24px;right:24px;width:60px;height:60px;
-  background:#25D366;color:#fff;border-radius:50%;
+  background:var(--wa-green);color:#fff;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   box-shadow:0 8px 24px -4px rgba(37,211,102,0.5);
   z-index:9999;transition:transform var(--transition);
@@ -550,7 +533,6 @@ ul{list-style:none}
   70%{box-shadow:0 8px 24px -4px rgba(37,211,102,0.5),0 0 0 14px rgba(37,211,102,0)}
   100%{box-shadow:0 8px 24px -4px rgba(37,211,102,0.5),0 0 0 0 rgba(37,211,102,0)}
 }
-
 /* ============================================================
    FADE-IN ON SCROLL
    ============================================================ */
@@ -563,14 +545,12 @@ ul{list-style:none}
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M72PV459"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
 <!-- ============================================================
      BARRA DE URGÊNCIA (evergreen — sazonais ficam em LPs separadas)
      ============================================================ -->
 <div class="urgency" role="banner">
   <span>✦ Projeto 3D gratuito · Parcelamento próprio em até 36x no boleto · Montagem inclusa por equipe própria ✦</span>
 </div>
-
 <!-- ============================================================
      HEADER
      ============================================================ -->
@@ -585,13 +565,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#depoimentos">Depoimentos</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
-    <a href="#orcamento" class="btn-wa" aria-label="Solicitar orçamento">
+    <a href="#" class="btn-wa wa-cta" data-location="header" target="_blank" rel="noopener" aria-label="Falar com especialista no WhatsApp">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.5.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2.1-.3 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2.1 3.1 5 4.3.7.3 1.2.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.4-.3zM12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.8L2 22l5.4-1.3c1.4.7 3 1.1 4.6 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-2.9-.4-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3C4.4 14.9 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
       <span>Falar com especialista</span>
     </a>
   </div>
 </header>
-
 <!-- ============================================================
      HERO
      ============================================================ -->
@@ -609,7 +588,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Projeto 3D gratuito, parcelamento direto com a loja e montagem inclusa,
           tudo em um só lugar, do showroom até o seu apartamento.
         </p>
-
         <div class="pay-box">
           <div class="pay-label">Parcele em até</div>
           <div class="pay-num">36x</div>
@@ -617,11 +595,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="pay-divider"></div>
           <div class="pay-foot">1ª parcela em 90 dias · Aprovação Facilitada</div>
         </div>
-
-        <a href="#orcamento" class="cta">
+        <a href="#" class="cta wa-cta" data-location="hero" target="_blank" rel="noopener">
           Quero meu projeto agora <span class="cta-arrow">→</span>
         </a>
-
         <div class="trust">
           <span class="trust-item">⭐ <strong>4.9</strong> no Google</span>
           <span class="trust-sep">|</span>
@@ -630,7 +606,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="trust-item"><strong>10 anos</strong> no mercado</span>
         </div>
       </div>
-
       <div class="hero-img-wrap">
         <img
           src="images/hero.webp"
@@ -642,7 +617,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-
 <!-- ============================================================
      FAIXA DE CREDIBILIDADE
      ============================================================ -->
@@ -668,7 +642,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-
 <!-- ============================================================
      ANCORAGEM EMOCIONAL
      ============================================================ -->
@@ -687,7 +660,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-
 <!-- ============================================================
      ANTES / DEPOIS
      ============================================================ -->
@@ -716,7 +688,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-
 <!-- ============================================================
      PLANOS
      ============================================================ -->
@@ -730,7 +701,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         Todas com cozinha, dormitórios e sala, projetadas, fabricadas e montadas pela nossa equipe.
       </p>
     </div>
-
     <div class="plans-grid">
       <!-- Plano 30m² -->
       <div class="plan fade-in">
@@ -744,9 +714,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span class="plan-check">✓</span>Projeto 3D incluso</li>
           <li><span class="plan-check">✓</span>Montagem inclusa</li>
         </ul>
-        <a href="#orcamento" class="cta" data-plan="Casa Completa até 30m²">Solicitar orçamento →</a>
+        <a href="#" class="cta wa-cta" data-location="plano" data-plan="Casa Completa até 30m²" target="_blank" rel="noopener">Solicitar orçamento →</a>
       </div>
-
       <!-- Plano 50m² (DESTAQUE) -->
       <div class="plan featured fade-in">
         <div class="plan-badge-top">Mais escolhido</div>
@@ -760,9 +729,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span class="plan-check">✓</span>Projeto 3D incluso</li>
           <li><span class="plan-check">✓</span>Montagem inclusa</li>
         </ul>
-        <a href="#orcamento" class="cta" data-plan="Casa Completa até 50m²">Solicitar orçamento →</a>
+        <a href="#" class="cta wa-cta" data-location="plano" data-plan="Casa Completa até 50m²" target="_blank" rel="noopener">Solicitar orçamento →</a>
       </div>
-
       <!-- Plano 60m² -->
       <div class="plan fade-in">
         <div class="plan-badge">Até 60m²</div>
@@ -775,17 +743,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span class="plan-check">✓</span>Home office sob medida</li>
           <li><span class="plan-check">✓</span>Projeto 3D + montagem</li>
         </ul>
-        <a href="#orcamento" class="cta" data-plan="Casa Completa até 60m²">Solicitar orçamento →</a>
+        <a href="#" class="cta wa-cta" data-location="plano" data-plan="Casa Completa até 60m²" target="_blank" rel="noopener">Solicitar orçamento →</a>
       </div>
     </div>
-
     <p class="plans-legal">
       *Valores válidos para projetos contratados conforme condições vigentes. Parcelamento sujeito à análise interna.
       Imagens e configurações de ambientes meramente ilustrativas. Consulte condições no showroom.
     </p>
   </div>
 </section>
-
 <!-- ============================================================
      GALERIA
      ============================================================ -->
@@ -794,7 +760,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="gallery-wrap">
       <div class="tag">Nossos projetos</div>
       <h2 class="section-title fade-in">Espaços que viram lar.<br>Lares que contam histórias.</h2>
-
       <div class="gallery-grid">
         <div class="gallery-item">
           <img src="images/projeto-cozinha-01.webp" alt="Cozinha planejada Mobile D'arte" loading="lazy" decoding="async">
@@ -817,14 +782,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="gallery-overlay"><span>Cozinha sob medida</span></div>
         </div>
       </div>
-
-      <a href="#orcamento" class="gallery-link">
+      <a href="#" class="gallery-link wa-cta" data-location="galeria" target="_blank" rel="noopener">
         Quero um projeto como esse →
       </a>
     </div>
   </div>
 </section>
-
 <!-- ============================================================
      PROCESSO
      ============================================================ -->
@@ -834,7 +797,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="tag">Como funciona</div>
       <h2 class="section-title" style="margin-bottom:0">Do primeiro contato à entrega,<br>em 4 passos simples.</h2>
     </div>
-
     <div class="timeline">
       <div class="step fade-in">
         <div class="step-num">1</div>
@@ -865,15 +827,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
-
     <div class="process-cta">
-      <a href="#orcamento" class="cta">
+      <a href="#" class="cta wa-cta" data-location="processo" target="_blank" rel="noopener">
         Começar meu projeto agora <span class="cta-arrow">→</span>
       </a>
     </div>
   </div>
 </section>
-
 <!-- ============================================================
      DEPOIMENTOS
      ============================================================ -->
@@ -883,7 +843,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="tag">O que dizem nossos clientes</div>
       <h2 class="section-title" style="margin-bottom:0">Quem já viveu a experiência<br>é quem melhor conta.</h2>
     </div>
-
     <div class="map-embed fade-in">
       <iframe
         src="https://maps.google.com/maps?q=Av.+Jos%C3%A9+Giorgi+1181+Granja+Viana+Cotia+SP&output=embed"
@@ -891,7 +850,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-
     <div class="testi-grid">
       <div class="testi-card fade-in">
         <div class="testi-head-row">
@@ -904,7 +862,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="testi-text">"Fui super bem atendida desde o primeiro contato. O projeto 3D ficou idêntico ao resultado final, a montagem foi rápida e a equipe muito educada. Recomendo demais."</p>
         <div class="testi-date">12 de março de 2026</div>
       </div>
-
       <div class="testi-card fade-in">
         <div class="testi-head-row">
           <div class="testi-avatar">R</div>
@@ -916,7 +873,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="testi-text">"O que me convenceu foi o parcelamento próprio. Nenhum banco aprovou meu crédito e eles aprovaram na hora. Móveis de qualidade e prazo cumprido direitinho."</p>
         <div class="testi-date">28 de fevereiro de 2026</div>
       </div>
-
       <div class="testi-card fade-in">
         <div class="testi-head-row">
           <div class="testi-avatar">P</div>
@@ -931,68 +887,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-
 <!-- ============================================================
-     CTA FINAL + FORMULÁRIO (âncora dos botões)
+     CTA FINAL — 100% WHATSAPP (sem formulário)
      ============================================================ -->
 <section class="cta-final" id="orcamento">
   <div class="container">
     <div class="cta-grid">
       <div class="cta-text fade-in">
         <h2>Seu projeto começa<br>com uma conversa.</h2>
-        <p class="sub">Projeto 3D gratuito · Parcelamento direto com a loja · Montagem inclusa.</p>
+        <p class="sub">Fale agora com a nossa equipe no WhatsApp. Projeto 3D gratuito, parcelamento direto com a loja e montagem inclusa.</p>
         <ul class="cta-bullets">
           <li><span class="cta-bullet-icon">📐</span>Projeto 3D sem custo, feito por arquiteto.</li>
           <li><span class="cta-bullet-icon">💳</span>Parcelamento próprio, aprovação facilitada.</li>
           <li><span class="cta-bullet-icon">🔧</span>Montagem inclusa por equipe própria.</li>
         </ul>
       </div>
-
-      <div class="form-card fade-in">
+      <div class="wa-card fade-in">
         <h3>Solicite seu orçamento</h3>
-        <p class="form-sub">Preencha rapidinho e respondemos pelo WhatsApp.</p>
-        <form id="leadForm" autocomplete="on">
-          <div class="field">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Como podemos te chamar?" required>
-          </div>
-          <div class="field">
-            <label for="whats">WhatsApp</label>
-            <input type="tel" id="whats" name="whats" placeholder="(11) 99999-9999" required>
-          </div>
-          <div class="field">
-            <label for="area">Qual ambiente deseja planejar?</label>
-            <select id="area" name="area" required>
-              <option value="">Selecione uma opção</option>
-              <option value="Cozinha">Cozinha</option>
-              <option value="Sala de Estar">Sala de Estar</option>
-              <option value="Quarto">Quarto</option>
-              <option value="Suíte Master">Suíte Master</option>
-              <option value="Banheiro">Banheiro</option>
-              <option value="Home Office">Home Office</option>
-              <option value="Área de Serviço">Área de Serviço</option>
-              <option value="Varanda">Varanda</option>
-              <option value="Closet">Closet</option>
-              <option value="Casa Completa">Casa Completa</option>
-            </select>
-          </div>
-
-          <!-- Hidden fields de UTM (capturados automaticamente da URL) -->
-          <input type="hidden" id="utm_source" name="utm_source" value="">
-          <input type="hidden" id="utm_medium" name="utm_medium" value="">
-          <input type="hidden" id="utm_campaign" name="utm_campaign" value="">
-          <input type="hidden" id="utm_content" name="utm_content" value="">
-          <input type="hidden" id="utm_term" name="utm_term" value="">
-          <input type="hidden" id="lead_plan" name="lead_plan" value="">
-
-          <button type="submit" class="cta">Quero meu projeto gratuito</button>
-          <p class="form-disclaimer">Sem compromisso. Respondemos em até 2h em horário comercial.</p>
-        </form>
+        <p class="wa-card-sub">Atendimento rápido e direto pelo WhatsApp. Sem formulários, sem espera.</p>
+        <a href="#" class="btn-wa-big wa-cta" data-location="cta_final" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.5.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2.1-.3 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2.1 3.1 5 4.3.7.3 1.2.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.4-.3zM12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.8L2 22l5.4-1.3c1.4.7 3 1.1 4.6 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-2.9-.4-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3C4.4 14.9 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
+          Falar no WhatsApp agora
+        </a>
+        <p class="wa-card-foot"><strong>Resposta rápida</strong> em horário comercial · Sem compromisso</p>
       </div>
     </div>
   </div>
 </section>
-
 <!-- ============================================================
      FAQ
      ============================================================ -->
@@ -1002,7 +923,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="tag">Dúvidas frequentes</div>
       <h2 class="section-title" style="margin-bottom:0">Ainda tem dúvidas? A gente responde.</h2>
     </div>
-
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
@@ -1015,7 +935,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Zona Oeste de SP, Carapicuíba, Osasco, Barueri, Santana de Parnaíba, Itapevi e Vargem Grande Paulista.
         </div></div>
       </div>
-
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
           <span>Como funciona esse parcelamento próprio sem banco?</span>
@@ -1027,7 +946,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           A primeira parcela só vence 90 dias após a entrega dos móveis.
         </div></div>
       </div>
-
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
           <span>Em quanto tempo recebo os móveis depois de fechar o projeto?</span>
@@ -1039,7 +957,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           qualquer alteração, você é avisado com antecedência, algo que raramente acontece.
         </div></div>
       </div>
-
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
           <span>O projeto 3D é mesmo gratuito? Sem pegadinha?</span>
@@ -1051,7 +968,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Sem custo, sem compromisso e sem pressão para fechar.
         </div></div>
       </div>
-
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
           <span>Posso pedir alterações depois que o projeto for aprovado?</span>
@@ -1063,7 +979,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           adicional, por isso o projeto 3D é tão importante: ele garante que você veja tudo antes.
         </div></div>
       </div>
-
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
           <span>Qual a garantia dos móveis depois da entrega?</span>
@@ -1078,7 +993,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-
 <!-- ============================================================
      FOOTER
      ============================================================ -->
@@ -1094,17 +1008,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           do primeiro projeto até o pós-entrega.
         </p>
       </div>
-
       <div class="footer-col">
         <h4>Contato</h4>
         <ul class="footer-list">
           <li><span class="icon">📍</span>Av. José Giorgi, 1181<br>&nbsp;&nbsp;&nbsp;&nbsp;Granja Viana, Cotia - SP</li>
           <li><span class="icon">📞</span><a href="tel:+5511947063125">(11) 94706-3125</a></li>
-          <li><span class="icon">💬</span><a href="#orcamento">Solicitar orçamento</a></li>
+          <li><span class="icon">💬</span><a href="#" class="wa-cta" data-location="footer" target="_blank" rel="noopener">Falar no WhatsApp</a></li>
           <li><span class="icon">🕐</span>Seg–Sex 9h às 18h<br>&nbsp;&nbsp;&nbsp;&nbsp;Sáb 9h às 14h</li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Navegue</h4>
         <ul class="footer-list">
@@ -1116,114 +1028,145 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       © 2026 Mobile D'arte By Italínea. Todos os direitos reservados.
     </div>
   </div>
 </footer>
-
 <!-- ============================================================
-     BOTÃO FLUTUANTE (agora rola até o formulário)
+     BOTÃO FLUTUANTE — WHATSAPP DIRETO
      ============================================================ -->
-<a href="#orcamento" class="wa-float" aria-label="Solicitar orçamento">
+<a href="#" class="wa-float wa-cta" data-location="botao_flutuante" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.5.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2.1-.3 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2.1 3.1 5 4.3.7.3 1.2.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.4-.3zM12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.8L2 22l5.4-1.3c1.4.7 3 1.1 4.6 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-2.9-.4-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3C4.4 14.9 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
 </a>
-
 <script>
 (function(){
   'use strict';
 
-  const WHATSAPP_NUMBER = '5511947063125';
+  // ============================================================
+  // CONFIGURAÇÃO DO WHATSAPP
+  // ============================================================
+  var WHATSAPP_NUMBER = '5511947063125';
+  // Mensagem padrão — sinaliza ao SDR que o lead veio do anúncio/campanha
+  var BASE_MSG = 'Olá! Vi o anúncio de vocês e quero fazer um orçamento!';
 
-  // ----------------------------------------------------------
-  // CAPTURA DE UTMs (executa antes de qualquer interação)
-  // ----------------------------------------------------------
-  const UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-  function captureUTMs(){
-    const params = new URLSearchParams(window.location.search);
-    UTM_KEYS.forEach(key => {
-      const value = params.get(key);
-      const input = document.getElementById(key);
-      if(value && input) input.value = value;
+  // ============================================================
+  // CAPTURA DE UTMs (para enviar ao GTM no evento de conversão)
+  // ============================================================
+  var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var params = new URLSearchParams(window.location.search);
+  function cleanVal(v){
+    if(!v) return '';
+    // Ignora macros não resolvidas do Meta/Google ({{...}})
+    if(v.indexOf('{{') !== -1 || v.indexOf('}}') !== -1) return '';
+    return v;
+  }
+  function getUTM(key){ return cleanVal(params.get(key)); }
+
+  // ============================================================
+  // MONTA A URL DO WHATSAPP (api.whatsapp.com)
+  // ============================================================
+  function buildWhatsAppURL(plan){
+    var msg = BASE_MSG;
+    if(plan){
+      msg += '\n\nTenho interesse no plano: ' + plan;
+    }
+    return 'https://api.whatsapp.com/send?phone=' + WHATSAPP_NUMBER +
+           '&text=' + encodeURIComponent(msg);
+  }
+
+  // Define o href correto em todos os CTAs de WhatsApp (fallback caso o clique falhe)
+  var waLinks = document.querySelectorAll('.wa-cta');
+  waLinks.forEach(function(link){
+    link.setAttribute('href', buildWhatsAppURL(link.dataset.plan || ''));
+  });
+
+  // ============================================================
+  // EVENTO DE CONVERSÃO NA CAMADA DE DADOS (GTM)
+  // Evento personalizado: whatsapp_click
+  // ============================================================
+  window.dataLayer = window.dataLayer || [];
+  waLinks.forEach(function(link){
+    link.addEventListener('click', function(){
+      window.dataLayer.push({
+        event: 'whatsapp_click',
+        click_location: link.dataset.location || 'desconhecido',
+        click_plan: link.dataset.plan || '',
+        click_text: (link.innerText || '').trim().slice(0, 80),
+        lead_utm_source: getUTM('utm_source'),
+        lead_utm_medium: getUTM('utm_medium'),
+        lead_utm_campaign: getUTM('utm_campaign'),
+        lead_utm_content: getUTM('utm_content'),
+        lead_utm_term: getUTM('utm_term')
+      });
     });
-  }
-  captureUTMs();
+  });
 
-  function getUTM(key){
-    const el = document.getElementById(key);
-    return (el && el.value) ? el.value : '';
-  }
-
-  // ----------------------------------------------------------
+  // ============================================================
   // HEADER SHADOW ON SCROLL
-  // ----------------------------------------------------------
-  const header = document.getElementById('header');
-  function onScroll(){
+  // ============================================================
+  var header = document.getElementById('header');
+  window.addEventListener('scroll', function(){
     if(window.scrollY > 80) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
+  }, {passive:true});
 
-  // ----------------------------------------------------------
+  // ============================================================
   // COUNTER ANIMATION
-  // ----------------------------------------------------------
+  // ============================================================
   function formatNum(value, decimals){
     if(decimals > 0) return value.toFixed(decimals);
-    const n = Math.round(value);
+    var n = Math.round(value);
     return n >= 1000 ? n.toLocaleString('pt-BR') : String(n);
   }
   function animateCounter(el){
-    const target = parseFloat(el.dataset.count);
-    const decimals = parseInt(el.dataset.decimals || '0', 10);
-    const suffix = el.dataset.suffix || '';
-    const prefix = el.dataset.prefix || '';
-    const duration = 1500;
-    const start = performance.now();
+    var target = parseFloat(el.dataset.count);
+    var decimals = parseInt(el.dataset.decimals || '0', 10);
+    var suffix = el.dataset.suffix || '';
+    var prefix = el.dataset.prefix || '';
+    var duration = 1500;
+    var start = performance.now();
     function step(now){
-      const t = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      const value = target * eased;
+      var t = Math.min(1, (now - start) / duration);
+      var eased = 1 - Math.pow(1 - t, 3);
+      var value = target * eased;
       el.textContent = prefix + formatNum(value, decimals) + suffix;
       if(t < 1) requestAnimationFrame(step);
       else el.textContent = prefix + formatNum(target, decimals) + suffix;
     }
     requestAnimationFrame(step);
   }
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  var counterObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
       if(entry.isIntersecting){
         animateCounter(entry.target);
         counterObserver.unobserve(entry.target);
       }
     });
   }, {threshold: 0.4});
+  document.querySelectorAll('.credit-num').forEach(function(el){ counterObserver.observe(el); });
 
-  document.querySelectorAll('.credit-num').forEach(el => counterObserver.observe(el));
-
-  // ----------------------------------------------------------
+  // ============================================================
   // FADE-IN ON SCROLL
-  // ----------------------------------------------------------
-  const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  // ============================================================
+  var fadeObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
       if(entry.isIntersecting){
         entry.target.classList.add('visible');
         fadeObserver.unobserve(entry.target);
       }
     });
   }, {threshold: 0.15, rootMargin: '0px 0px -50px 0px'});
+  document.querySelectorAll('.fade-in').forEach(function(el){ fadeObserver.observe(el); });
 
-  document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
-
-  // ----------------------------------------------------------
+  // ============================================================
   // FAQ ACCORDION
-  // ----------------------------------------------------------
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const btn = item.querySelector('.faq-q');
-    btn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(other => {
+  // ============================================================
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(other){
         other.classList.remove('open');
         other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
       });
@@ -1234,140 +1177,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
-  // ----------------------------------------------------------
-  // WHATSAPP MASK
-  // ----------------------------------------------------------
-  const whatsInput = document.getElementById('whats');
-  whatsInput.addEventListener('input', (e) => {
-    let v = e.target.value.replace(/\D/g, '').slice(0, 11);
-    if(v.length >= 7){
-      v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
-    } else if(v.length >= 3){
-      v = `(${v.slice(0,2)}) ${v.slice(2)}`;
-    } else if(v.length >= 1){
-      v = `(${v}`;
-    }
-    e.target.value = v;
-  });
-
-  // ----------------------------------------------------------
-  // BOTÕES DE PLANO → preenche lead_plan ao rolar para o form
-  // ----------------------------------------------------------
-  document.querySelectorAll('a[data-plan]').forEach(link => {
-    link.addEventListener('click', () => {
-      const planInput = document.getElementById('lead_plan');
-      if(planInput) planInput.value = link.dataset.plan || '';
-    });
-  });
-
-  // ----------------------------------------------------------
-  // TRACKING DE CLIQUES (botões que vão para o formulário)
-  // ----------------------------------------------------------
-  document.querySelectorAll('a[href="#orcamento"]').forEach(link => {
-    link.addEventListener('click', () => {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'cta_to_form_click',
-        click_text: link.innerText.trim().slice(0, 80),
-        click_location: link.closest('section')?.id || link.closest('header')?.id || link.closest('footer') ? 'footer' : 'floating',
-        click_plan: link.dataset.plan || ''
-      });
-    });
-  });
-
-  // ----------------------------------------------------------
-  // FORM SUBMIT — envia para WhatsApp com UTMs anexados
-  // ----------------------------------------------------------
-  document.getElementById('leadForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Limpa valores que contêm macros não resolvidos do Meta/Google ({{...}})
-    const cleanUTM = (v) => {
-      if(!v) return '';
-      if(v.indexOf('{{') !== -1 || v.indexOf('}}') !== -1) return '';
-      return v;
-    };
-
-    const nome = document.getElementById('nome').value.trim();
-    const whats = document.getElementById('whats').value.trim();
-    const area = document.getElementById('area').value;
-    const plan = document.getElementById('lead_plan').value;
-
-    const utmSource = cleanUTM(getUTM('utm_source'));
-    const utmMedium = cleanUTM(getUTM('utm_medium'));
-    const utmCampaign = cleanUTM(getUTM('utm_campaign'));
-    const utmContent = cleanUTM(getUTM('utm_content'));
-    const utmTerm = cleanUTM(getUTM('utm_term'));
-
-    // Mapeia utm_source para frase amigável na mensagem do lead
-    // (nomes que o leigo reconhece, não jargão de marketing)
-    const PLATFORM_FRIENDLY = {
-      'meta':      'no Instagram',
-      'facebook':  'no Facebook',
-      'fb':        'no Facebook',
-      'instagram': 'no Instagram',
-      'ig':        'no Instagram',
-      'whatsapp':  'no WhatsApp',
-      'google':    'no Google',
-      'googleads': 'no Google',
-      'gads':      'no Google',
-      'tiktok':    'no TikTok',
-      'linkedin':  'no LinkedIn',
-      'youtube':   'no YouTube'
-    };
-    const platformFriendly = PLATFORM_FRIENDLY[utmSource.toLowerCase()] || '';
-
-    // GTM/GA — UTMs completas pra tracking interno (não vão pra mensagem do WhatsApp)
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'lead_form_submit',
-      lead_name: nome,
-      lead_whatsapp: whats,
-      lead_ambiente: area,
-      lead_plan: plan,
-      lead_platform: platformFriendly || 'Direto',
-      lead_utm_source: utmSource,
-      lead_utm_medium: utmMedium,
-      lead_utm_campaign: utmCampaign,
-      lead_utm_content: utmContent,
-      lead_utm_term: utmTerm,
-      form_location: 'landing_page_principal'
-    });
-
-    // Mensagem do WhatsApp — tom natural, sem expor que é lead rastreado
-    let opening;
-    if(platformFriendly){
-      opening = `Olá! Vi um anúncio da Mobile D'arte ${platformFriendly} e quero solicitar um orçamento.`;
-    } else {
-      opening = `Olá! Vi o site da Mobile D'arte e quero solicitar um orçamento.`;
-    }
-
-    let msg = opening + '\n\n';
-    msg += `📐 Ambiente: *${area}*\n`;
-    msg += `📱 ${whats}\n`;
-    msg += `👤 ${nome}`;
-
-    const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank', 'noopener');
-  });
-
-  // ----------------------------------------------------------
-  // SMOOTH SCROLL OFFSET (para header sticky)
-  // ----------------------------------------------------------
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const href = a.getAttribute('href');
+  // ============================================================
+  // SMOOTH SCROLL OFFSET (apenas âncoras internas do menu)
+  // ============================================================
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var href = a.getAttribute('href');
       if(href === '#' || href.length < 2) return;
-      const target = document.querySelector(href);
+      var target = document.querySelector(href);
       if(!target) return;
       e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({top, behavior:'smooth'});
+      var offset = 80;
+      var top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({top: top, behavior:'smooth'});
     });
   });
 })();
 </script>
-
 </body>
 </html>
